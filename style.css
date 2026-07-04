@@ -59,11 +59,14 @@ body{
     gap: 13px;
     position: absolute;
     bottom: 0;
+    padding: 10px 0;
+    
 }
 
 .footer a{
     color: grey;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .right{
@@ -97,6 +100,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     background-color: #252525;
+    position: relative;
 }
 
 .card > *{
@@ -107,3 +111,24 @@ body{
     width: 100%;
     object-fit: contain;
 }
+
+.play{
+    width: 28px;
+    height: 28px;
+    background-color: #00FF00;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 168px;
+    right: 17px;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+/* .play:hover{
+    opacity: 1;
+    top: 168;
+} */
