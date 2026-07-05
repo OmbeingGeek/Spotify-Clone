@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto' , sans-serif;
+    box-sizing: border-box;
 }
 
 body{
@@ -71,6 +72,7 @@ body{
 
 .right{
     margin: 16px 0;
+    position: relative;
 }
 
 
@@ -94,7 +96,7 @@ body{
     margin: 30px;
     flex-wrap: wrap;
     overflow-y: scroll;
-    max-height: 70vh;
+    max-height: 60vh;
 }
 
 .card{
@@ -166,5 +168,19 @@ body{
 
 .loginbtn:hover{
     font-weight: bold;
+}
+.playbar{
+    position: absolute;
+    bottom: 0;
+    color: red;
+    background-color: #00FF00;
+    width: 100%;
+    padding: 12px;
+}
+
+.songbutton{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }
 
