@@ -1,5 +1,7 @@
 console.log('Lets Go');
 
+let currentSong = new Audio();
+
 async function getSongs(){
     let a = await fetch("http://127.0.0.1:5500/songs");
     let response = await a.text();
@@ -20,12 +22,11 @@ async function getSongs(){
 
 
 const playMusic = (track) =>{
-    let audio = new Audio("/songs/" + track);
-    // audio.play();
+    currentSong.src = "/songs/" + track
+    // currentSong.play();
 }
 async function main() {
 
-    let currentSong;
 
     let songs = await getSongs();
     console.log(songs);
