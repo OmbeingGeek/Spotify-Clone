@@ -22,14 +22,24 @@ async function main() {
     let songs = await getSongs();
     console.log(songs);
 
-    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
+    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
 
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<li> ${song.replaceAll("%20"," ")} </li>`;
+        songUL.innerHTML = songUL.innerHTML + `<li>
+                            <img class="invert" src="music.svg" alt="">
+                            <div class="info">
+                                <div>${song.replaceAll("%20"," ")}</div>
+                                <div>Utkarsh</div>
+                            </div>
+                            <div class="playnow">
+                                <span>Play Now</span>
+                                <img class="invert" src="play.svg" alt="">
+                            </div>
+         </li>`;
     }
 
     var audio = new Audio(songs[3]);
-    // audio.play(); 
+    audio.play(); 
 
     audio.addEventListener("loadeddata",() => {
         console.log(audio.duration, audio.currentSrc, audio.currentTime);

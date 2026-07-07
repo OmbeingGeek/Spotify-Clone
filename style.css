@@ -170,12 +170,13 @@ body{
     font-weight: bold;
 }
 .playbar{
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 30px;
     color: red;
     background-color: #00FF00;
-    width: 90%;
+    width: 70vw;
     padding: 12px;
+    border-radius: 30px;
 }
 
 .songbutton{
@@ -184,11 +185,40 @@ body{
     gap: 16px;
 }
 
+.songList{
+    height: 60vh;
+    overflow: auto;
+    margin-bottom: 34px;
+}
 .songList ul{
     padding: 0 12px;
 }
 
 .songList ul li{
     list-style-type: decimal;
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+}
+
+.songList .info{
+    font-size: 13px;
+    width: 344px;
+}
+.playnow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playnow span{
+    width: 64px;
+    font-size: 15px;
+    padding: 12px;
 }
 
