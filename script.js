@@ -18,7 +18,15 @@ async function getSongs(){
 
 }
 
+
+const playMusic = (track) =>{
+    let audio = new Audio("/songs/" + track);
+    // audio.play();
+}
 async function main() {
+
+    let currentSong;
+
     let songs = await getSongs();
     console.log(songs);
 
@@ -34,18 +42,21 @@ async function main() {
                             <div class="playnow">
                                 <span>Play Now</span>
                                 <img class="invert" src="play.svg" alt="">
-                            </div>
-         </li>`;
-    }
+                            </div></li>`;
+    } 
 
-    var audio = new Audio(songs[3]);
-    audio.play(); 
-
-    audio.addEventListener("loadeddata",() => {
-        console.log(audio.duration, audio.currentSrc, audio.currentTime);
+    // audio.addEventListener("loadeddata",() => {
+    //     console.log(audio.duration, audio.currentSrc, audio.currentTime);
         
-    });
+    // });
 
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
+        e.addEventListener("click", element=>{
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+        })
+        
+    })
     
 } 
  
