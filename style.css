@@ -96,7 +96,7 @@ body{
     margin: 30px;
     flex-wrap: wrap;
     overflow-y: scroll;
-    max-height: 60vh;
+    min-height: 60vh;
 }
 
 .card{
@@ -177,7 +177,7 @@ body{
     width: 70vw;
     padding: 12px;
     border-radius: 10px;
-    height: 50px;
+    min-height: 50px;
 }
 
 .songbuttons{
@@ -191,6 +191,18 @@ body{
     overflow: auto;
     margin-bottom: 34px;
 }
+
+.hamburger{
+    display: none;
+}
+
+.hamburgerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
 .songList ul{
     padding: 0 12px;
 }
@@ -261,16 +273,24 @@ body{
 .abovebar{
     display: flex;
     justify-content: space-between;
+    /* margin: 20px 0; */
 }
 
-@media (max-width: 1400px){
+@media (max-width: 1300px){
     .left{
-        background-color: red;
         position: absolute;
         left: -100%;
         transition: all .3s;
         z-index: 1;
-        width: 233px;
+        width: 333px;
+        background-color: black;
+    }
+
+    .left .close{
+        position: absolute;
+        right: 31px;
+        top: 25px;
+        width: 29px;
     }
 
     .right{
@@ -278,6 +298,26 @@ body{
     }
 
     .playbar{
+        width: 98vw;
+    }
+
+    .seekbar{
         width: 95vw;
+    }
+
+    .seekbar{
+        width: 90%;
+    }
+    .hamburger{
+        display: block;
+    }
+
+    .card{
+        width: 90vw;
+    }
+
+    .cardContainer{
+        margin: 0;
+        justify-content: center;
     }
 }
