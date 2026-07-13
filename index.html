@@ -73,7 +73,7 @@
             <div class="spotifyPlaylists">
                 <h1>Spotify Playlists</h1>
                 <div class="cardContainer">
-                    <div class="card">
+                    <div data-folder="cs" class="card">
                         <div class="play">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://
                                     www.w3.org/2000/svg">
@@ -86,7 +86,14 @@
                         <h3>Happy hits</h3>
                         <p>Hits to boost your mood and fill with happiness</p>
                     </div>
-                    <div class="card">
+                    <div data-folder="ncs" class="card">
+                        <div class="play">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://
+                                    www.w3.org/2000/svg">
+                                <path d="M5 20V4L19 12L5 20Z" stroke="#141B34" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
                         <img src="https://i.scdn.co/image/ab67616d00001e02292341cd3e621d7f9171331f" alt="">
                         <h3>Happy hits</h3>
                         <p>Hits to boost your mood and fill with happiness</p>
@@ -117,7 +124,10 @@
     
                         </div>
                         <div class="volume">
-                            <img src="volume.svg" alt="">
+                            <img width="25px" src="volume.svg" alt="">
+                            <div class="range">
+                                <input type="range" name="volume">
+                            </div>
                         </div>
                     </div>
 

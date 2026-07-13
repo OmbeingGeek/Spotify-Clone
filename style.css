@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root{
+    --a:0;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -104,7 +108,8 @@ body{
     margin: 30px;
     flex-wrap: wrap;
     overflow-y: scroll;
-    min-height: 60vh;
+    /* height: 60vh; */
+    /* align-items: flex-start; */
 }
 
 .card{
@@ -113,6 +118,13 @@ body{
     border-radius: 5px;
     background-color: #252525;
     position: relative;
+    transition: all 1s;
+}
+
+.card:hover{
+    background-color: black;
+    cursor: pointer;
+    --a:1;
 }
 
 .card > *{
@@ -136,7 +148,7 @@ body{
     position: absolute;
     top: 168px;
     right: 17px;
-    opacity: 0;
+    opacity: var(--a);
     transition: all 1s ease-out;
 }
 
@@ -186,6 +198,7 @@ body{
     padding: 12px;
     border-radius: 10px;
     min-height: 50px;
+    justify-self: center;
 }
 
 .songbuttons{
@@ -279,9 +292,26 @@ body{
     align-items: center;
 }
 
-.songinfo, .songtime{
+.songinfo{
     color: rgb(0, 0, 0);
     padding: 0 12px;
+}
+
+.songtime{
+    width: 125px;
+    color: black;
+    padding: 0 12px;
+}
+
+.volume{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume:hover::after{
+    content: "agsg";
 }
 
 .abovebar{
@@ -330,7 +360,7 @@ body{
     }
 
     .card{
-        width: 80vw;
+        width: 44vw;
     }
 
     .cardContainer{
@@ -342,5 +372,11 @@ body{
         flex-direction: column;
         gap: 10px;
         align-items: center;
+    }
+}
+
+@media (max-width: 450px){
+    .card{
+        width: 80vw;
     }
 }
