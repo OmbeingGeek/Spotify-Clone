@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+.close{
+    display: none;
+}
+
 body{
     background-color: black; 
     color: white;
@@ -87,6 +91,10 @@ body{
 }
 
 .spotifyPlaylists{
+    padding: 16px;
+}
+
+.spotifyPlaylists h1{
     padding: 16px;
 }
 
@@ -265,6 +273,12 @@ body{
     cursor: pointer;
 }
 
+.timevol{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .songinfo, .songtime{
     color: rgb(0, 0, 0);
     padding: 0 12px;
@@ -284,6 +298,7 @@ body{
         z-index: 1;
         width: 333px;
         background-color: black;
+        padding: 0;
     }
 
     .left .close{
@@ -291,18 +306,20 @@ body{
         right: 31px;
         top: 25px;
         width: 29px;
+        display: block;
     }
 
     .right{
         width: 100vw;
+        margin: 0;
     }
 
     .playbar{
-        width: 98vw;
+        width: calc(100vw - 75px);
     }
 
     .seekbar{
-        width: 95vw;
+        width: calc(100vw - 120px);
     }
 
     .seekbar{
@@ -313,11 +330,17 @@ body{
     }
 
     .card{
-        width: 90vw;
+        width: 80vw;
     }
 
     .cardContainer{
         margin: 0;
         justify-content: center;
+    }
+
+    .abovebar{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 }

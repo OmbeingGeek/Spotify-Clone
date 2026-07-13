@@ -1,6 +1,7 @@
 console.log('Lets Go');
 
 let currentSong = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds){
     if(isNaN(seconds) || seconds < 0){
@@ -37,6 +38,8 @@ async function getSongs(){
 
 const playMusic = (track,pause=true) =>{
     currentSong.src = "/songs/" + track
+    console.log(track);
+    
     if(pause){
         currentSong.play();
         play.src = "pause.svg";
@@ -48,7 +51,7 @@ const playMusic = (track,pause=true) =>{
 async function main() {
 
 
-    let songs = await getSongs();
+    songs = await getSongs();
     playMusic(songs[0],false);
     console.log(songs);
 
@@ -114,8 +117,28 @@ async function main() {
         document.querySelector(".left").style.left = "-100%"
     })
 
-
+    previous.addEventListener("click",()=>{
+        currentSong.pause()
+        console.log("Previous Clicked")
+        console.log(currentSong);
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if((index - 1) >= 0){
+            playMusic(songs[index-1].replaceAll("%20"," "));
+        }
+        
+    })
     
+    next.addEventListener("click",()=>{
+        currentSong.pause()
+        console.log("Next Clicked")
+        console.log(currentSong);
+        console.log(songs);
+        
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if((index + 1) < songs.length){
+            playMusic(songs[index + 1].replaceAll("%20"," "));
+        }
+    })
 
 
     
